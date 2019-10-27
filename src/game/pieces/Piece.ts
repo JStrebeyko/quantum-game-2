@@ -8,7 +8,6 @@ export default class Piece extends Vue {
 	@Prop({ default: 64 }) readonly tileSize!: number;
 
 	created() {
-		console.log(this.cell);
 	}
 
 	get energized() {

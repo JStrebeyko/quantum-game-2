@@ -62,7 +62,6 @@ export default class Info extends Vue {
 	color: white;
 	text-decoration: none;
 }
-
 .element-list {
 	a {
 		color: white;

@@ -105,7 +105,6 @@
 				</g>
 			</g>
 		</g>
-		<!-- BASIC STATE -->
 		<g id="Qregular">
 			<g>
 				<path

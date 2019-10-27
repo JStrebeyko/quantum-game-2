@@ -71,8 +71,8 @@
           :photons="activeFrame.quantum"
         />
         <controls
-          @step-back="showPrevious"
-          @step-forward="showNext"
+          @step-back="showPreviousFrame"
+          @step-forward="showNextFrame"
           :activeFrame="activeFrame"
           :totalFrames="frames.length"
         />
@@ -221,7 +221,7 @@ export default class Game extends Vue {
     this.frames.push(nextFrame);
   }
 
-  showNext() {
+  showNextFrame() {
     const newFrameNumber = this.frameNumber + 1;
     if (newFrameNumber > this.frames.length - 1) {
       console.error("Can't access frames that are not computed yet...");
@@ -231,7 +231,7 @@ export default class Game extends Vue {
     return this.frameNumber;
   }
 
-  showPrevious() {
+  showPreviousFrame() {
     const newFrameNumber = this.frameNumber - 1;
     if (newFrameNumber < 0) {
       console.error("Can't access frames before simulation...");
@@ -247,13 +247,12 @@ export default class Game extends Vue {
   }
 
   handleArrowPress(e: { keyCode: number }): void {
-    // console.log(e.keyCode);
     switch (e.keyCode) {
       case 37:
-        this.showPrevious();
+        this.showPreviousFrame();
         break;
       case 39:
-        this.showNext();
+        this.showNextFrame();
         break;
       default:
         break;
@@ -310,7 +309,6 @@ export default class Game extends Vue {
 
 <style lang="scss" scoped>
 h1 {
-  //color:crimson;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -319,7 +317,6 @@ h1 {
   margin-bottom: 30;
   margin-top: 0;
 }
-
 .game {
   width: 100%;
   min-height: 100vh;

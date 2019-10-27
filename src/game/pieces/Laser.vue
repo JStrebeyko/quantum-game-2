@@ -59,7 +59,6 @@
 				/>
 			</g>
 		</g>
-		<!-- OUTLINE FOR ROTATION (ONLY IN SANDBOX MODE) -->
 		<g class="st3">
 			<path
 				class="st0"

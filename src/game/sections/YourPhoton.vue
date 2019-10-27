@@ -5,8 +5,6 @@
 	>
 		<div class="step">
 			<h3>YOUR PHOTONS</h3>
-			<!-- <span>STEP {{ activeFrame.step }}</span> -->
-			<!-- <span>STATUS: {{ activeFrame.gameState }}</span> -->
 			<div
 				v-for="(particle, index) in particles"
 				:key="index"
@@ -52,19 +50,10 @@ import { CellInterface, CoordInterface, FrameInterface } from 'quantumweasel';
 })
 export default class SimulationStepsDisplay extends Vue {
 	@Prop() readonly activeFrame!: FrameInterface;
-	width: number = 0;
+	width: number = 200;
 	$refs!: {
 		wrapper: HTMLElement;
 	};
-
-	mounted() {
-		this.getElementWidth();
-	}
-
-	getElementWidth() {
-		// this.width = this.$refs.wrapper.clientWidth;
-		this.width = 200;
-	}
 
 	get particles() {
 		return (
@@ -88,12 +77,10 @@ export default class SimulationStepsDisplay extends Vue {
 	display: block;
 	text-align: left;
 }
-
 .step {
 	font-size: 0.8rem;
 	line-height: 150%;
 }
-
 h3 {
 	font-size: 1rem;
 }

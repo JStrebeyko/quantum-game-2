@@ -1,21 +1,12 @@
 <template>
 	<transition :name="gameState">
 		<div
-			v-if="gameState === 'baba'"
+			v-if="endLevel"
 			:class="gameState"
 			class="wrapper"
 		>
 			<h2>
-				:(
-			</h2>
-		</div>
-		<div
-			v-else-if="gameState === 'Victory'"
-			:class="gameState"
-			class="wrapper"
-		>
-			<h2>
-				You won!
+				{{ gameResoult }}
 				<slot>
 				</slot>
 			</h2>
@@ -45,6 +36,18 @@ export default class Overlay extends Vue {
 			this.$confetti.stop();
 		}
 	}
+	get gameResoult() {
+		if (this.gameState === "Victory") {
+			return "You won!"
+		} else {
+			return ":("
+		}
+	}
+	get endLevel() {
+		if (this.gameState === "Victory" || this.gameState === 'baba') {
+			return true
+		}
+	}
 }
 
 
@@ -56,28 +59,22 @@ export default class Overlay extends Vue {
 	transition: opacity 0.5s;
 }
 .Victory-enter,
-.Victory-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.Victory-leave-to  {
 	opacity: 0;
 }
-
 .Victory.wrapper {
-	//background-color: rgba(179, 7, 136, 0);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	h2 {
-		//THIS IS A DRAFT VERSION OF POP-UP
 		width:12rem;
 		height:10rem;
 		padding:1rem;
 		background: linear-gradient(#5c00d3, #ff0055 , #fbb03b);
-		//margin: 50;
 		color: white;
 		font-size: 2rem;
-		//transform: rotate(-5deg);
 	}
 }
-
 .wrapper {
 	height: 100vh;
 	width: 100vw;

@@ -201,7 +201,6 @@
 				</g>
 			</g>
 		</g>
-		<!-- OUTLINE - WHEN THERE IS PROBABILITY OF BEING HIT, NO ROTATION -->
 		<g v-if="border" id="Qoutline">
 			<path
 				class="st4"

@@ -133,11 +133,6 @@ export default class MainMenu extends Vue {}
 	flex-direction: column;
 	align-items: center;
 	background: linear-gradient(#5c00d3, #ff0055, #fbb03b);
-	//background-color: #2e006a;
-	// background-image: url(~../assets/background_dots.svg);
-	// background-size: 1000px auto; //not responsive
-	// background-repeat: repeat;
-	// background-position: center;
 }
 h1 {
 	color: white;
@@ -164,11 +159,9 @@ h2 {
 	width: 100vw;
 	min-width: 1300px;
 	position: center;
-	//  margin-left: -50vw;
 	height: 100px;
 	margin-top: 100px;
 	margin-bottom: 12vw;
-	//left: 50%;
 	align-items: center;
 }
 .image {
@@ -183,7 +176,6 @@ h2 {
 	line-height: 150%;
 }
 h3 {
-	// margin: 40px 0 0;
 	color: white;
 	text-align: left;
 }
@@ -197,35 +189,29 @@ li {
 }
 a {
 	color: rgb(255, 158, 195);
-	//color:ffcfe5;
-	//color: #9780b5;
 	text-decoration: none;
 }
-///////////
 *{
     transition: all 0.6s;
 }
-// .newsletter{
-// 	padding-bottom:30px;
-// }
 input[type='email']{
-    outline: none;
-    display: inline-block;
-    width: 60%;
-    padding: 10px;
+  outline: none;
+  display: inline-block;
+  width: 60%;
+  padding: 10px;
 	background:none;
-    border-top: none;
+  border-top: none;
 	border-right: none;
 	border-left: none;
 	border-bottom: 1px solid white;
-    box-sizing: border-box;
+  box-sizing: border-box;
 	color: white;
 	font-size: 1rem;
 	font-weight: normal;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
 	margin-right: 20px;
 }
 input[type='email']:focus{
@@ -233,7 +219,7 @@ input[type='email']:focus{
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
 	font-size: 1rem;
 	font-weight:normal;
-    border-top: none;
+  border-top: none;
 	border-right: none;
 	border-left: none;
 	border-bottom: 1px solid white;
@@ -243,13 +229,12 @@ input[type='email']:focus{
   font-family: Montserrat, Arial, Helvetica, sans-serif
 }
 @media screen and (max-width: 736px){
-    input[type='email']{
-		color: white;
-		font-size: 1rem;
-		font-weight:normal;
-        display: block;
-        width: 100%;
-    }
+  input[type='email']{
+	color: white;
+	font-size: 1rem;
+	font-weight:normal;
+  display: block;
+  width: 100%;
+  }
 }
-////////////
 </style>

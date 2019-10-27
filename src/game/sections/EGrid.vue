@@ -7,7 +7,6 @@
         :height="totalHeight"
         ref="grid"
       >
-        <!-- <svg class="grid" :width="totalWidth" :height="totalHeight"> -->
         <!-- DOTS -->
         <g
           v-for="(row, y) in level.grid.rows + 1"
@@ -25,7 +24,6 @@
             />
           </g>
         </g>
-
         <!-- LASER PATH -->
         <g
           v-for="(laser, index) in individualLaserPath"
@@ -41,7 +39,6 @@
             stroke-width="3"
           />
         </g>
-
         <!-- CELLS -->
         <QCell
           v-for="(cell, index) in level.grid.cells"
@@ -50,7 +47,6 @@
           :tileSize="tileSize"
           @click.native="rotate(cell)"
         />
-
         <!-- PHOTONS -->
         <g
           v-for="(particle, index) in activeFrame.quantum"
@@ -227,7 +223,6 @@ export default class EGrid extends Vue {
    */
   rotate(cell: Cell) {
     cell.rotate();
-    console.log(cell.toString());
 		this.level.grid.set(cell);
 		this.reset()
 	}
@@ -343,7 +338,6 @@ export default class EGrid extends Vue {
     stroke-dashoffset: 64;
   }
 }
-
 .container {
 	display: inline-block;
   margin-bottom: 30px;
@@ -351,33 +345,27 @@ export default class EGrid extends Vue {
     border: 5px solid #666;
   }
 }
-
 .btn-group {
   text-align: center;
   width: 100%;
-
   button {
     background-color: darkmagenta;
     border: 1px solid darkorchid;
     color: white;
     padding: 5px 14px;
     cursor: pointer;
-
     &:not(:last-child) {
       border-right: none;
     }
   }
-
   &:after {
     content: '';
     clear: both;
     display: table;
   }
-
   button:hover {
     background-color: darkorchid;
   }
-
   .selected {
     background-color: darkred;
   }

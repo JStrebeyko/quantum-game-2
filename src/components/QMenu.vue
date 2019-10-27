@@ -1,18 +1,34 @@
 <template>
 	<div class="q-menu-wrapper">
-		<div :class="{ open: isMenuOpen, 'menu-icon': true }" @click="toggleMenu">
+		<div
+			:class="{ open: isMenuOpen, 'menu-icon': true }"
+			@click="toggleMenu"
+		>
 			<div class="bar1"></div>
 			<div class="bar2"></div>
 			<div class="bar3"></div>
 		</div>
 		<transition name="fade">
-			<div v-if="isMenuOpen" class="menu-overlay">
+			<div
+				v-if="isMenuOpen"
+				class="menu-overlay"
+			>
 				<menu>
-					<router-link to="/level/1" @click.stop.native="closeMenu">QUANTUM GAME</router-link>
+					<router-link
+						to="/level/1"
+						@click.stop.native="closeMenu"
+					>
+						QUANTUM GAME
+					</router-link>
 					<span>CONTINUE</span>
 					<span>LEVELS</span>
 					<span>SANDBOX</span>
-					<router-link to="/info" @click.stop.native="closeMenu">ENCYCLOPEDIA</router-link>
+					<router-link
+						to="/info"
+						@click.stop.native="closeMenu"
+					>
+						ENCYCLOPEDIA
+					</router-link>
 					<span>OPTIONS</span>
 					<span>BLOG</span>
 				</menu>

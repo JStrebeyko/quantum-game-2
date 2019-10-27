@@ -115,15 +115,12 @@ export default class Goals extends Vue {
   padding-bottom: 100px;
   border-bottom: 1px solid white;
   width: 100%;
-  // height: 320px;
   display: flex;
   flex-direction: column;
-
   & .upper-icons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    //justify-content: left;
     margin-bottom: 2rem;
   }
   & .bottom-icons {

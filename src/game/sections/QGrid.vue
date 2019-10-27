@@ -22,7 +22,6 @@
         />
       </g>
     </g>
-
     <!-- LASER PATH -->
     <g
       v-for="(laser, index) in individualLaserPath"
@@ -42,8 +41,8 @@
 
     <!-- CELLS -->
     <QCell
-      v-for="(cell, i) in grid.cells"
-      :key="'cell' + i"
+      v-for="(cell, index) in grid.cells"
+      :key="'cell' + index"
       :cell="cell"
       :tileSize="tileSize"
       @click.native="rotate(cell)"

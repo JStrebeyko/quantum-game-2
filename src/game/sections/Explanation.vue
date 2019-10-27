@@ -26,7 +26,6 @@ export default class Explanation extends Vue {}
 		margin: 0;
 		font-size: 1rem;
 	}
-
 	&.explanation {
 		border-top: 1px solid #8e819d;
 		text-align: left;

@@ -2,7 +2,7 @@
 	<section class="entry-section">
 		<h2
 			:class="{ 'entry-title': true, active: isOpen }"
-			@click="handleTitleClick"
+			@click="toggleIsOpen"
 		>
 			{{ section.title.toUpperCase() }}
 		</h2>
@@ -49,7 +49,6 @@ export default class EntrySection extends Vue {
 	};
 
 	isOpen: boolean = false;
-
 	// hack, as having a computed property that's using refs
 	// as an initial data property causes errors - refs are
 	// not existant then.
@@ -57,7 +56,7 @@ export default class EntrySection extends Vue {
 		this.isOpen = this.shouldBeOpenOnInit;
 	}
 
-	handleTitleClick(e: { target: Element }) {
+	toggleIsOpen(e: { target: Element }) {
 		this.isOpen = !this.isOpen;
 	}
 
@@ -129,20 +128,13 @@ section.entry-section {
 		}
 	}
 }
-
-// TEXT STYLING:
-// key words and phrases
 em {
 	font-style: underline;
 }
-
-// strong importance
 strong,
 b {
 	font-style: bold;
 }
-
-// emphasis
 em,
 i {
 	font-style: italics;

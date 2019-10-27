@@ -1,8 +1,8 @@
 <template>
   <g
     :style="positionStyle"
-    @mouseenter="handleMouseEnter"
-    @mouseleave="handleMouseLeave"
+    @mouseenter="pointActiveElement"
+    @mouseleave="leaveActiveElement"
   >
     <rect
       :width="tileSize"
@@ -95,11 +95,11 @@ export default class QCell extends Vue {
     return (val + 0.5) * this.tileSize;
   }
 
-  handleMouseEnter() {
+  pointActiveElement() {
     this.border = borderColors.rotable;
   }
 
-  handleMouseLeave() {
+  leaveActiveElement() {
     this.border = '';
   }
 

@@ -54,7 +54,6 @@ button {
 		transition: 0.5s;
 	}
 }
-
 .special {
 	background-color: #ff0055;
 	border-bottom: 4px solid #890236;
@@ -63,7 +62,6 @@ button {
 		transition: 0.5s;
 	}
 }
-
 .big {
 	background-color: #5c00d3;
 	font-size: 1.5rem;
@@ -73,17 +71,4 @@ button {
 		transition: 0.5s;
 	}
 }
-// button:hover {
-// 	background-color: #4e99c9;
-// 	transition: 0.5s;
-// }
-
-// .color1:hover {
-// 	background-color: #be1616;
-// 	transition: 0.5s;
-// }
-// .color2:hover {
-// 	background-color: #4e99c9;
-// 	transition: 0.5s;
-// }
 </style>
