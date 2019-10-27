@@ -1,16 +1,22 @@
 <template>
 	<transition :name="gameState">
-		<div v-if="gameState === 'baba'" :class="gameState" class="wrapper">
+		<div
+			v-if="gameState === 'baba'"
+			:class="gameState"
+			class="wrapper"
+		>
 			<h2>
 				:(
 			</h2>
 		</div>
-
-		<div v-else-if="gameState === 'Victory'" :class="gameState" class="wrapper">
+		<div
+			v-else-if="gameState === 'Victory'"
+			:class="gameState"
+			class="wrapper"
+		>
 			<h2>
 				You won!
 				<slot>
-
 				</slot>
 			</h2>
 		</div>
@@ -81,4 +87,3 @@ export default class Overlay extends Vue {
 	align-items: center;
 }
 </style>
-

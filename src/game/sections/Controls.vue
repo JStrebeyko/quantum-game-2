@@ -9,11 +9,21 @@
 			/>
 		</span>
 
-		<span><b>STEP {{ activeFrame.step }} / {{totalFrames}}</b></span>
-		<span class="view-mode">
-			<b-button v-for="btn in viewControls" :key="btn" :which-is="btn" @click.native="$emit(btn)" />
+		<span>
+			<b>
+				STEP {{ activeFrame.step }} / {{totalFrames}}
+			</b>
 		</span>
-		<slot></slot>
+		<span class="view-mode">
+			<b-button
+				v-for="btn in viewControls"
+				:key="btn"
+				:which-is="btn"
+				@click.native="$emit(btn)"
+			/>
+		</span>
+		<slot>
+		</slot>
 	</div>
 </template>
 

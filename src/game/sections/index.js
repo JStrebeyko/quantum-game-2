@@ -3,6 +3,6 @@ import Explanation from './Explanation.vue';
 import Goals from './Goals.vue';
 import Toolbox from './Toolbox.vue';
 import YourPhoton from './YourPhoton.vue';
-import Grid from './Grid.vue';
-export { Controls, Explanation, Goals, Grid, Toolbox, YourPhoton };
+import QGrid from './QGrid.vue';
+export { Controls, Explanation, Goals, QGrid, Toolbox, YourPhoton };
 //# sourceMappingURL=index.js.map

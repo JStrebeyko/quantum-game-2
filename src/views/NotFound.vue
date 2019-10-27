@@ -2,7 +2,11 @@
 	<div class="not-found">
 		<h1>404</h1>
 		<p>OH NO :(</p>
-		<router-link to="/"> <q-button type="basic">Take me back!</q-button></router-link>
+		<router-link to="/">
+			<q-button type="basic">
+				Take me back!
+			</q-button>
+		</router-link>
 	</div>
 </template>
 

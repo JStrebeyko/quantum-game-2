@@ -1,5 +1,8 @@
 <template>
-	<button type="button" :style="calculatedStyle">
+	<button
+		type="button"
+		:style="calculatedStyle"
+	>
 		<slot></slot>
 	</button>
 </template>

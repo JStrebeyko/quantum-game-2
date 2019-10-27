@@ -1,12 +1,23 @@
 <template>
-  <div ref="goals" class="goals-wrapper">
+  <div
+    ref="goals"
+    class="goals-wrapper"
+  >
     <div class="upper-icons">
       <div>
-        <img src="@/assets/keyIcon.svg" alt="Key Icon" width="25" />
+        <img
+          src="@/assets/keyIcon.svg"
+          alt="Key Icon"
+          width="25"
+        />
         <span> 02</span>
       </div>
       <div>
-        <img src="@/assets/keyIcon.svg" alt="Key Icon" width="25" />
+        <img
+          src="@/assets/keyIcon.svg"
+          alt="Key Icon"
+          width="25"
+        />
         <span> 25</span>
       </div>
     </div>
@@ -23,7 +34,9 @@
       :total="totalGoal()"
       :start-angle="0"
     >
-      <div class="inner-circle">{{ totalParticle().toFixed(0) }}%</div>
+      <div class="inner-circle">
+        {{ totalParticle().toFixed(0) }}%
+      </div>
       <div>PROBABILITY</div>
     </vc-donut>
     <!-- <div class="bottom-icons">

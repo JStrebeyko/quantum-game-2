@@ -1,12 +1,30 @@
 <template>
 	<section class="entry-section">
-		<h2 :class="{ 'entry-title': true, active: isOpen }" @click="handleTitleClick">
+		<h2
+			:class="{ 'entry-title': true, active: isOpen }"
+			@click="handleTitleClick"
+		>
 			{{ section.title.toUpperCase() }}
 		</h2>
-		<div ref="contentWrapper" class="content-wrapper" :style="style">
-			<div v-for="(media, index) in section.contents" :key="index" class="content">
-				<p v-if="!isImg(section.contents[index])" v-html="section.contents[index]"></p>
-				<img v-else :src="imageUrl(section.contents[index])" />
+		<div
+			ref="contentWrapper"
+			class="content-wrapper"
+			:style="style"
+		>
+			<div
+				v-for="(media, index) in section.contents"
+				:key="index"
+				class="content"
+			>
+				<p
+					v-if="!isImg(section.contents[index])"
+					v-html="section.contents[index]"
+					>
+				</p>
+				<img
+					v-else
+					:src="imageUrl(section.contents[index])"
+				/>
 			</div>
 		</div>
 	</section>

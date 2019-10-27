@@ -4,7 +4,10 @@
 		:width="width + 2 * margin"
 		:height="height + 2 * margin"
 	>
-		<g v-if="displayElectric" class="electric">
+		<g
+			v-if="displayElectric"
+			class="electric"
+		>
 			<circle
 				v-for="(z, index) in zs"
 				:key="`electricPoint-${index}`"
@@ -15,8 +18,10 @@
 				:style="{ fill: eColor(gaussianComplex(bre, bim, z, k, sigma)) }"
 			/>
 		</g>
-
-		<g v-if="displayMagnetic" class="magnetic">
+		<g
+			v-if="displayMagnetic"
+			class="magnetic"
+		>
 			<circle
 				v-for="(z, index) in zs"
 				:key="`magneticPoint-${index}`"
@@ -27,8 +32,10 @@
 				:style="{ fill: mColor(gaussianComplex(bre, bim, z, k, sigma)) }"
 			/>
 		</g>
-
-		<g v-if="displayGaussian" class="gaussian">
+		<g
+			v-if="displayGaussian"
+			class="gaussian"
+		>
 			<circle
 				v-for="(z, index) in zs"
 				:key="`gaussianPointb-${index}`"
@@ -51,7 +58,6 @@
 
 <script lang="ts">
 import { Component, Emit, Vue, Prop } from 'vue-property-decorator';
-
 import { select } from 'd3-selection';
 import { scaleLinear, scaleSequential } from 'd3-scale';
 import { interpolateViridis, interpolateInferno } from 'd3-scale-chromatic';

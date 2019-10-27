@@ -1,9 +1,25 @@
 <template>
-  <svg class="grid" :width="totalWidth" :height="totalHeight" ref="grid">
+  <svg
+    class="grid"
+    :width="totalWidth"
+    :height="totalHeight"
+    ref="grid"
+  >
     <!-- DOTS -->
-    <g v-for="(row, y) in grid.rows" :key="y">
-      <g v-for="(column, x) in grid.cols" :key="x">
-        <circle :cx="x * tileSize" :cy="y * tileSize" r="1" fill="#edeaf4" />
+    <g
+      v-for="(row, y) in grid.rows"
+      :key="y"
+    >
+      <g
+        v-for="(column, x) in grid.cols"
+        :key="x"
+      >
+        <circle
+          :cx="x * tileSize"
+          :cy="y * tileSize"
+          r="1"
+          fill="#edeaf4"
+        />
       </g>
     </g>
 

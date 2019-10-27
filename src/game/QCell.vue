@@ -1,6 +1,13 @@
 <template>
-  <g :style="positionStyle" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
-    <rect :width="tileSize" :height="tileSize" />
+  <g
+    :style="positionStyle"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
+  >
+    <rect
+      :width="tileSize"
+      :height="tileSize"
+    />
     <component
       :is="cell.element.name"
       :cell="cell"

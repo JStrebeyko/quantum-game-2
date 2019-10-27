@@ -57,7 +57,10 @@
 						/>
 					</defs>
 					<clipPath id="detectorSVGID_5_">
-						<use xlink:href="#detectorSVGID_3_" style="overflow:visible;" />
+						<use
+							xlink:href="#detectorSVGID_3_"
+							style="overflow:visible;"
+						/>
 					</clipPath>
 					<path class="st5" d="M12,7c0,0-11,48,53,45S47,72,47,72l-32-7L2,29V13L12,7z" />
 				</g>
@@ -70,9 +73,15 @@
 						/>
 					</defs>
 					<clipPath id="detectorSVGID_7_">
-						<use xlink:href="#detectorSVGID_6_" style="overflow:visible;" />
+						<use
+							xlink:href="#detectorSVGID_6_"
+							style="overflow:visible;"
+						/>
 					</clipPath>
-					<polygon class="st6" points="55,10 32,32 56,54 61,47 62,22 60,14 			" />
+					<polygon
+						class="st6"
+						points="55,10 32,32 56,54 61,47 62,22 60,14 			"
+					/>
 				</g>
 			</g>
 			<g class="st7">

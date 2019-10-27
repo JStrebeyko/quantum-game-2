@@ -1,8 +1,15 @@
 <template>
 	<main-layout>
-		<div slot="left" class="element-list">
+		<div
+			slot="left"
+			class="element-list"
+		>
 			<h3 class="upper-border">ALL ELEMENTS</h3>
-			<router-link v-for="entry in entryList" :key="entry" :to="`/info/${entry}`">
+			<router-link
+				v-for="entry in entryList"
+				:key="entry"
+				:to="`/info/${entry}`"
+			>
 				<div>{{ entry }}</div>
 			</router-link>
 		</div>

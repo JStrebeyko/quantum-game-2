@@ -74,7 +74,10 @@
 				<rect x="9.1" y="9.1" class="st1" width="2.1" height="2.1" />
 			</g>
 		</g>
-		<g v-if="border" id="_x3C_Qbackground_x3E__1_">
+		<g
+			v-if="border"
+			id="_x3C_Qbackground_x3E__1_"
+		>
 			<path
 				class="st2"
 				:style="{ fill: border }"

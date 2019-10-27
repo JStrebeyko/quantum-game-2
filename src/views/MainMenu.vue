@@ -1,9 +1,14 @@
 <template>
 	<div class="home-page-wrapper">
 		<div class="row-full">
-			<img src="@/assets/QG_logo.svg" alt="QuantumGame" />
+			<img
+				src="@/assets/QG_logo.svg"
+				alt="QuantumGame"
+			/>
 		</div>
-		<router-link to="/level/1"> <q-button type="big"> PLAY </q-button> </router-link>
+		<router-link to="/level/1">
+			<q-button type="big"> PLAY </q-button>
+		</router-link>
 		<br />
 		<div class="hello">
 			<h1>
@@ -11,20 +16,58 @@
 				With true quantum mechanics underneath!
 			</h1>
 			<h1>
-				Visit us on <a href="https://twitter.com/quantumgameio" target="_blank">Twitter</a>,
-				<a href="https://www.facebook.com/quantumgameio/" target="_blank">Facebook</a>,
-				<a href="https://github.com/stared/quantum-game" target="_blank">Github</a> and
-				<a href="https://medium.com/quantum-photons" target="_blank">Medium</a>.
+				Visit us on
+				<a
+					href="https://twitter.com/quantumgameio"
+					target="_blank"
+				>
+					Twitter
+				</a>
+				,
+				<a
+					href="https://www.facebook.com/quantumgameio/"
+					target="_blank"
+				>
+					Facebook
+				</a>
+				,
+				<a
+					href="https://github.com/stared/quantum-game"
+					target="_blank"
+				>
+					Github
+				</a>
+					and
+				<a
+					href="https://medium.com/quantum-photons"
+					target="_blank"
+				>
+					Medium
+				</a>
+				.
 			</h1>
 			<!-- newsletter -->
-			<div class="newsletter" id="content">
+			<div
+				class="newsletter"
+				id="content"
+			>
 				<h1>Sign up for our newsletter now!</h1>
-				<input type="email" placeholder="Email"/>
-				<q-button type="special" href="#" >SIGN UP</q-button>
+				<input
+					type="email"
+					placeholder="Email"
+				/>
+				<q-button
+					type="special"
+					href="#"
+				>
+					SIGN UP
+				</q-button>
 			</div>
-
 			<div class="image">
-				<img src="@/assets/rock.svg" alt="rock" />
+				<img
+					src="@/assets/rock.svg"
+					alt="rock"
+				/>
 			</div>
 			<div class="blog">
 				<h2>Wave optics and quantum mechanics as a game</h2>
@@ -139,7 +182,6 @@ h2 {
 	font-weight:normal;
 	line-height: 150%;
 }
-
 h3 {
 	// margin: 40px 0 0;
 	color: white;
@@ -186,8 +228,6 @@ input[type='email']{
     -ms-box-sizing: border-box;
 	margin-right: 20px;
 }
-
-
 input[type='email']:focus{
 	color: white;
 	font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -198,12 +238,10 @@ input[type='email']:focus{
 	border-left: none;
 	border-bottom: 1px solid white;
 }
-
 ::placeholder {
   color: white;
   font-family: Montserrat, Arial, Helvetica, sans-serif
 }
-
 @media screen and (max-width: 736px){
     input[type='email']{
 		color: white;

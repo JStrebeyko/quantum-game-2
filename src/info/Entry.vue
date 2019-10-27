@@ -1,18 +1,26 @@
 <template>
-  <div v-if="entry" class="entry">
+  <div
+    v-if="entry"
+    class="entry"
+  >
     <router-link to="/info">
       <q-button type="basic">ENCYCLOPEDIA</q-button>
     </router-link>
     <article>
       <h1 class="title">{{ entry.title.toUpperCase() }}</h1>
       <h2 class="short">{{ entry.short }}</h2>
-
       <div class="boards">
-        <div v-for="(level, i) in levels" :key="'level' + i">
-          <Egrid :levelObj="level.levelObj" :step="level.step" class="board" />
+        <div
+          v-for="(level, index) in levels"
+          :key="'level' + index"
+        >
+          <Egrid
+            :levelObj="level.levelObj"
+            :step="level.step"
+            class="board"
+          />
         </div>
       </div>
-
       <entry-section
         v-for="(section, index) in entry.sections"
         :key="section.title"

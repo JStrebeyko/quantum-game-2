@@ -1,12 +1,28 @@
 <template>
   <div class="container">
     <div class="svg-container">
-      <svg class="grid" :width="totalWidth" :height="totalHeight" ref="grid">
+      <svg
+        class="grid"
+        :width="totalWidth"
+        :height="totalHeight"
+        ref="grid"
+      >
         <!-- <svg class="grid" :width="totalWidth" :height="totalHeight"> -->
         <!-- DOTS -->
-        <g v-for="(row, y) in level.grid.rows + 1" :key="y">
-          <g v-for="(column, x) in level.grid.cols + 1" :key="x">
-            <circle :cx="x * tileSize" :cy="y * tileSize" r="1" fill="#edeaf4" />
+        <g
+          v-for="(row, y) in level.grid.rows + 1"
+          :key="y"
+        >
+          <g
+            v-for="(column, x) in level.grid.cols + 1"
+            :key="x"
+          >
+            <circle
+              :cx="x * tileSize"
+              :cy="y * tileSize"
+              r="1"
+              fill="#edeaf4"
+            />
           </g>
         </g>
 
@@ -17,13 +33,19 @@
           :v-if="individualLaserPath.length > 0"
           class="lasers"
         >
-          <path :d="laser" stroke-dasharray="8 8" fill="transparent" stroke="red" stroke-width="3" />
+          <path
+            :d="laser"
+            stroke-dasharray="8 8"
+            fill="transparent"
+            stroke="red"
+            stroke-width="3"
+          />
         </g>
 
         <!-- CELLS -->
         <QCell
-          v-for="(cell, i) in level.grid.cells"
-          :key="'cell' + i"
+          v-for="(cell, index) in level.grid.cells"
+          :key="'cell' + index"
           :cell="cell"
           :tileSize="tileSize"
           @click.native="rotate(cell)"
@@ -65,8 +87,15 @@
           v-if="frameNumber === frame.step"
           @mouseover="setFrame(frame.step)"
           class="selected"
-        >{{frame.step}}</button>
-        <button v-else @mouseover="setFrame(frame.step)">{{frame.step}}</button>
+        >
+          {{frame.step}}
+        </button>
+        <button
+          v-else
+          @mouseover="setFrame(frame.step)"
+        >
+          {{frame.step}}
+        </button>
       </span>
     </div>
   </div>

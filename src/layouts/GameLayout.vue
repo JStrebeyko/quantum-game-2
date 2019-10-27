@@ -12,7 +12,6 @@
 				<slot name="header-right"></slot>
 			</div>
 		</header>
-
 		<!-- games main: goals, board, toolbox and explanations -->
 		<main>
 			<aside class="left">
@@ -25,7 +24,6 @@
 				<slot name="main-right"></slot>
 			</aside>
 		</main>
-
 		<!-- a generic footer for now -->
 		<footer>
 			<slot name="footer"></slot>
