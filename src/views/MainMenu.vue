@@ -9,15 +9,18 @@
 			<h1>
 				A puzzle game with photons, superposition and quantum measurement, right in your browser.
 				With true quantum mechanics underneath! <br>
-				This version of the game was brought to live with a huge help of the Center for Quantum Technologies from the National University of Singapore.
-				<img src="@/assets/CQT_NUS_Logo_mono.svg" alt="CQT logo" />
+				
 			</h1>
 			<h1>
 				Visit us on <a href="https://twitter.com/quantumgameio" target="_blank">Twitter</a>,
 				<a href="https://www.facebook.com/quantumgameio/" target="_blank">Facebook</a>,
-				<a href="https://github.com/stared/quantum-game" target="_blank">Github</a> and
+				<a href="https://github.com/stared/quantum-game-2" target="_blank">Github</a> and
 				<a href="https://medium.com/quantum-photons" target="_blank">Medium</a>.
 			</h1>
+			<p>	This version of the game was funded by the <a href="https://www.quantumlah.org/" target="_blank">Center for Quantum Technologies</a> 
+					of the National University of Singapore.
+			</p>
+			<img src="@/assets/CQT_NUS_Logo_mono.svg" alt="CQT logo" class="CQTlogo"/>
 			<!-- newsletter -->
 			<!-- <div id="content" class="newsletter">
 				<h1>Sign up for our newsletter now!</h1>
@@ -26,9 +29,9 @@
 			</div> -->
 
 			<div class="image">
-				<img src="@/assets/rock.svg" alt="rock" />
+				<img src="@/assets/Rock.svg" alt="rock" />
 			</div>
-			<div class="blog">
+			<!-- <div class="blog">
 				<h2>Wave optics and quantum mechanics as a game</h2>
 				<p>
 					NEWS: We develop Quantum Game v 2.0 at CQT, Singapore. See updates at Medium or Twitter.
@@ -41,7 +44,7 @@
 					theory), Motherboard, Scott Aaronson, Cory Doctorow, Hacker News (actually, twice). For
 					more games like this one, see: Science-based games collaborative list.
 				</p>
-			</div>
+			</div> -->
 			
 		</div>
 	</div>
@@ -85,6 +88,10 @@ h2 {
 	line-height: 150%;
 	text-transform: uppercase;
 }
+p {
+	color: white;
+	line-height: 150%;
+}
 .hello {
 	width: 35%;
 	display: flex;
@@ -104,8 +111,8 @@ h2 {
 	align-items: center;
 }
 .image {
-	width: 30%;
-	padding: 30px;
+	width: 40%;
+	padding-bottom: 10px;
 }
 .blog {
 	border-top: 1px solid white;
@@ -129,10 +136,17 @@ li {
 	margin: 0 10px;
 }
 a {
-	color: rgb(255, 158, 195);
+	color: rgb(255, 181, 209);
 	//color:ffcfe5;
 	//color: #9780b5;
 	text-decoration: none;
+}
+a:hover{
+		color: white;
+}
+
+.CQTlogo {
+	max-width: 250px;
 }
 ///////////
 * {
