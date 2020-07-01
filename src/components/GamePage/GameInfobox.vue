@@ -9,7 +9,11 @@
     <p v-if="infoPayload.text" class="description">
       {{ infoPayload.text }}
     </p>
-    <p v-for="(particle, index) in infoPayload.particles" :key="`info-particle-${index}`">
+    <p
+      v-for="(particle, index) in infoPayload.particles"
+      :key="`info-particle-${index}`"
+      class="description"
+    >
       Intensity {{ (100 * particle.probability).toFixed(1) }}% at {{ particle.direction }}°
     </p>
     <router-link v-if="infoPayload.kind === 'element'" :to="hyphenedElementEntryURL" class="link">
@@ -82,7 +86,7 @@ export default class GameActiveCell extends Vue {
 
 <style lang="scss" scoped>
 .explanation {
-  border-top: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: left;
   padding-top: 10px;
@@ -91,18 +95,23 @@ export default class GameActiveCell extends Vue {
     display: none;
   }
   & .title {
+    padding: 0px 10px;
     text-transform: uppercase;
     margin-top: 8px;
     font-size: 0.8rem;
-    font-weight: 300;
+    font-weight: 500;
   }
   & .description {
+    padding: 0px 10px;
     text-align: left;
     font-size: 0.8rem;
     line-height: 150%;
+    color: rgba(255, 255, 255, 0.6);
   }
   & .link {
-    color: #837e9b;
+    padding: 0px 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
     font-size: 0.8rem;
     text-decoration: none;
   }

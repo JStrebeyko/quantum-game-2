@@ -69,6 +69,7 @@ import {
   DetectorFourCell,
   PolarizerCell,
   QuarterWavePlateCell,
+  HalfWavePlateCell,
   SugarSolutionCell,
   FaradayRotatorCell,
   GlassCell,
@@ -98,6 +99,7 @@ const borderColors = {
     DetectorFourCell,
     PolarizerCell,
     QuarterWavePlateCell,
+    HalfWavePlateCell,
     SugarSolutionCell,
     FaradayRotatorCell,
     GlassCell,
@@ -372,7 +374,7 @@ export default class AppCell extends Mixins(Position) {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 rect {
   fill: transparent;
 }

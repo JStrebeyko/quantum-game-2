@@ -18,20 +18,17 @@ export default new Router({
       component: () => import('@/components/LevelMapPage/index.vue')
     },
     {
-      path: '/levels/shared/:id/:levelsaved',
+      path: '/level/:username/:id/',
       name: 'sharedlevels',
-      component: () => import('@/components/GamePage/index.vue')
+      component: () => import('@/components/GamePage/index.vue'),
+      meta: {
+        shared: true
+      }
     },
     {
       path: '/level/:id',
       name: 'level',
       component: () => import('@/components/GamePage/index.vue')
-    },
-    {
-      path: '/level/:id/:levelsaved',
-      name: 'levelsaved',
-      component: () => import('@/components/GamePage/index.vue'),
-      meta: { levelSaved: true }
     },
     {
       path: '/sandbox',
@@ -84,7 +81,7 @@ export default new Router({
     },
     {
       path: '/dev/rock_talk',
-      component: () => import('@/components/TestPage/index.vue'),
+      component: () => import('@/components/RockTalkPage/RockDemo.vue'),
     },
     {
       path: '*',

@@ -3,14 +3,16 @@
     <div class="row-full">
       <img src="@/assets/graphics/QG_logo.svg" alt="QuantumGame" />
     </div>
+    <div class="gameVersion">
+      <p>
+        Version {{ version }} (beta), based on a
+        <a :href="commitPath" target="_blank">{{ commitDate }}</a> commit.<br />
+        For optimal experience, play PC (mobile version coming soon).
+      </p>
+    </div>
     <router-link to="/level/1">
       <app-button type="big">PLAY</app-button>
     </router-link>
-    <p>
-      Version {{ version }} (beta), based on a
-      <a :href="commitPath" target="_blank">{{ commitDate }}</a> commit. For optimal experience,
-      play PC (mobile version coming soon).
-    </p>
     <div class="hello">
       <h1>
         A puzzle game with photons, superposition and quantum measurement, right in your browser.
@@ -21,9 +23,9 @@
         Visit us on
         <a href="https://twitter.com/quantumgameio" target="_blank">Twitter</a>,
         <a href="https://www.facebook.com/quantumgameio/" target="_blank">Facebook</a>,
-        <a href="https://github.com/Quantum-Game" target="_blank">GitHub</a>
-        and <a href="https://medium.com/quantum-photons" target="_blank">Medium</a>. If you have any
-        comments, @ as at Twitter, create a GitHub Issue or simply
+        <a href="https://github.com/Quantum-Game" target="_blank">GitHub</a>, and
+        <a href="https://medium.com/quantum-photons" target="_blank">Medium</a>. If you have any
+        comments, @ us at Twitter, create a GitHub Issue or simply
         <a href="mailto:pmigdal+qg@gmail.com">email us</a>! :)
       </p>
       <p>
@@ -92,16 +94,6 @@ export default class HomePage extends Vue {
   align-items: center;
   background: linear-gradient(#5c00d3, #ff0055, #fbb03b);
   width: 100%;
-  h2 {
-    color: white;
-    font-size: 1.4rem;
-    font-weight: normal;
-    line-height: 150%;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-  }
   & a {
     width: 100%;
     & img {
@@ -109,19 +101,18 @@ export default class HomePage extends Vue {
     }
   }
 }
+.gameVersion {
+  font-size: 0.8rem;
+  @media screen and (max-width: 1000px) {
+    font-size: 1rem;
+    width: 80%;
+  }
+}
 h1 {
   color: white;
   font-size: 1.4rem;
   font-weight: normal;
   line-height: 150%;
-}
-h2 {
-  margin-top: 20px;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 150%;
-  text-transform: uppercase;
 }
 p {
   color: white;
@@ -137,7 +128,7 @@ p {
     width: 60%;
   }
   @media screen and (max-width: 560px) {
-    width: 100%;
+    width: 80%;
   }
 }
 .row-full {
@@ -145,34 +136,18 @@ p {
   min-width: 1300px;
   position: center;
   height: 100px;
-  margin-bottom: 8vw;
+  margin-bottom: 8rem;
   align-items: center;
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 6rem;
+  }
 }
 .CQTlogo {
   width: 40%;
   padding-bottom: 10px;
   min-width: 250px;
 }
-.blog {
-  border-top: 1px solid white;
-  color: white;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 150%;
-}
 
-h3 {
-  color: white;
-  text-align: left;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
 a {
   color: rgb(255, 181, 209);
   text-decoration: none;
@@ -185,50 +160,8 @@ a:hover {
   transition: all 0.6s;
 }
 
-input[type='email'] {
-  outline: none;
-  display: inline-block;
-  width: 60%;
-  padding: 10px;
-  background: none;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid white;
-  box-sizing: border-box;
-  color: white;
-  font-size: 1rem;
-  font-weight: normal;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  margin-right: 20px;
-}
-
-input[type='email']:focus {
-  color: white;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: normal;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid white;
-}
-
 ::placeholder {
   color: white;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-}
-
-@media screen and (max-width: 736px) {
-  input[type='email'] {
-    color: white;
-    font-size: 1rem;
-    font-weight: normal;
-    display: block;
-    width: 100%;
-  }
 }
 </style>

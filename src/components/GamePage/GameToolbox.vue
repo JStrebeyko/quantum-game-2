@@ -50,7 +50,7 @@ export default class GameToolbox extends Vue {
   @Mutation('SET_ACTIVE_CELL') mutationSetActiveCell!: (cell: Cell) => void
   @Mutation('SET_HOVERED_CELL') mutationSetHoveredCell!: (cell: Cell) => void
   cell = {}
-  viewBox = '-8 0 80 80'
+  viewBox: string | boolean = '-8 0 80 80'
   counterX = '40%'
 
   mounted(): void {
@@ -83,7 +83,7 @@ export default class GameToolbox extends Vue {
 
   calculateViewBox(): void {
     if (window.innerWidth > 1000) {
-      this.viewBox = ''
+      this.viewBox = false
       this.counterX = '50%'
     } else {
       this.viewBox = '-8 0 80 80'
@@ -106,6 +106,7 @@ body {
   text-transform: uppercase;
   width: 100%;
   text-align: center;
+  border-top: solid 2px #fff;
   @media screen and (max-width: 1000px) {
     display: none;
   }
@@ -118,6 +119,7 @@ body {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding: 5px;
   @media screen and (max-width: 1000px) {
     justify-content: space-evenly;
     border-top: none;

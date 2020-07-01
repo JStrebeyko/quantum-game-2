@@ -168,14 +168,12 @@ export default class EncyclopediaMatrixBoard extends Vue {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  border-bottom: 1px solid #8e819d;
   @media screen and (max-width: 1000px) {
     flex-direction: column;
   }
 }
 
 .container {
-  border-bottom: 1px solid #8e819d;
   & .entry-title {
     padding: 1em 0;
     font-size: 1em;
@@ -206,17 +204,6 @@ export default class EncyclopediaMatrixBoard extends Vue {
       transform: rotate(90deg);
       transition: 0.2s;
     }
-  }
-  & .content-wrapper {
-    font-weight: lighter;
-    font-size: 1rem;
-    // max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    line-height: 1.3rem;
-    letter-spacing: 0.5px;
-    text-align: left;
-    line-height: 1.5em;
   }
   @media screen and (max-width: 1000px) {
     padding-left: 20px;

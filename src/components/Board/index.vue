@@ -27,7 +27,7 @@
         :v-if="particles.length > 0"
         :style="computeParticleStyle(particle)"
         class="photons"
-        @mouseenter.native="handleMouseEnter(particle.coord)"
+        @mouseenter="handleMouseEnter(particle.coord)"
       >
         <app-photon
           name
@@ -37,7 +37,7 @@
           :display-magnetic="false"
           :display-electric="true"
           :display-gaussian="true"
-          :sigma="0.25"
+          :sigma="0.3"
         />
       </g>
 

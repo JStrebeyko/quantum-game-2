@@ -1,39 +1,28 @@
 <template>
-  <svg id="Layer_1" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+  <svg style="enable-background:new 0 0 64 64;" xml:space="preserve">
     <g>
-      <!-- BARS -->
-      <g :style="computePolarization">
-        <rect x="8.5" y="-7" class="st2" width="3" height="69" />
-        <rect x="14.5" y="-7" class="st2" width="3" height="69" />
-        <rect x="20.5" y="-7" class="st2" width="3" height="69" />
-        <rect x="26.5" y="-7" class="st2" width="3" height="69" />
-        <rect x="32.5" y="-7" class="st2" width="3" height="69" />
-        <rect x="38.5" y="-7" class="st2" width="3" height="69" />
-        <rect x="44.5" y="-7" class="st2" width="3" height="69" />
-        <rect x="50.5" y="-7" class="st2" width="3" height="69" />
-      </g>
-      <!-- OVAL TRIMMING PATH -->
-      <clipPath id="clip">
-        <circle cx="32" cy="32" r="28" />
-      </clipPath>
-    </g>
-
-    <g class="circular">
+      <path class="st0" d="M12,12.4c-1.1,1.1-2.1,2.3-3,3.6V48c0.9,1.3,1.9,2.5,3,3.6V12.4z" />
+      <path class="st0" d="M15,54.2c1,0.7,2,1.4,3,2V7.8c-1,0.6-2,1.3-3,2V54.2z" />
+      <path class="st0" d="M24,5.2c-1,0.3-2,0.7-3,1.1v51.5c1,0.4,2,0.8,3,1.1V5.2z" />
+      <path class="st0" d="M30,4.1c-1,0.1-2,0.2-3,0.4v55.1c1,0.2,2,0.3,3,0.4V4.1z" />
+      <path class="st0" d="M33,60c1,0,2-0.1,3-0.3V4.3c-1-0.1-2-0.2-3-0.3V60z" />
+      <path class="st0" d="M42,5.8c-1-0.4-2-0.7-3-1v54.2c1-0.3,2-0.6,3-1V5.8z" />
+      <path class="st0" d="M48,9c-1-0.7-2-1.3-3-1.8v49.6c1-0.5,2-1.2,3-1.8V9z" />
       <path
         class="st0"
-        d="M60.5,37.8V28H55c-1.2,9-11.1,16-23,16S10.1,37,9,28H3.5v9.9C3.5,50.6,16.3,61,32,61S60.5,50.6,60.5,37.8z"
-      />
-      <path
-        class="st1"
-        d="M60.5,26.2C60.5,13.4,47.7,3,32,3S3.5,13.4,3.5,26.2S16.3,49.4,32,49.4C47.7,49.3,60.5,39,60.5,26.2z M9,28
-    c1.2-9,11.1-16,23-16s21.9,7,23,16c-1.2,9-11.1,16-23,16S10.1,37,9,28z"
-      />
-      <path
-        class="st0"
-        d="M32,11.9c12,0,21.9,7,23,16c0.1-0.6,0.1-1.2,0.1-1.8c0-9.8-10.4-17.8-23.2-17.8s-23.2,8-23.2,17.8
-    c0,0.6,0,1.2,0.1,1.8C10.1,19,20,11.9,32,11.9z"
+        d="M54,49.3V14.7c-0.9-1.2-1.9-2.2-3-3.3v41.1C52.1,51.6,53.1,50.5,54,49.3z"
       />
     </g>
+    <path
+      class="st1"
+      d="M32,7c13.8,0,25,11.2,25,25S45.8,57,32,57S7,45.8,7,32S18.2,7,32,7 M32,3C16,3,3,16,3,32s13,29,29,29
+      s29-13,29-29S48,3,32,3L32,3z"
+    />
+    <path
+      class="st2"
+      d="M32,8c13.2,0,24,10.8,24,24S45.2,56,32,56S8,45.2,8,32S18.8,8,32,8 M32,6C17.6,6,6,17.6,6,32s11.6,26,26,26
+      s26-11.6,26-26S46.4,6,32,6L32,6z"
+    />
   </svg>
 </template>
 
@@ -42,33 +31,18 @@ import { Component } from 'vue-property-decorator'
 import Piece from './Piece'
 
 @Component
-export default class PolarizerCell extends Piece {
-  /**
-   * Compute inner grid rotation from cell polarization
-   */
-  get computePolarization(): {} {
-    const polarization = this.cell ? this.cell.polarization : 0
-    return {
-      'transform-origin': `32px 32px`,
-      transform: `rotate(${(polarization + 90) % 180}deg)`,
-    }
-  }
-}
+export default class PolarizerCell extends Piece {}
 </script>
 
 <style lang="scss" scoped>
-.circular {
-  transform-origin: 32px 32px;
-  transform: rotate(270deg);
-}
 .st0 {
-  fill: #3c2c50;
+  fill: #8468a5;
+  opacity: 1; // The opacity should be linked with polarizer's strenght
 }
 .st1 {
-  fill: #4e3b6b;
+  fill: #5a4278;
 }
 .st2 {
-  clip-path: url(#clip);
-  fill: #5a4278;
+  fill: #3c2c50;
 }
 </style>

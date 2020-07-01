@@ -3,15 +3,16 @@
     <div slot="main">
       <h1>Saved Levels</h1>
       <div class="my-levels">
-        <h2>My levels:</h2>
+        <h3>My levels</h3>
         <ul class="levels-list">
-          <li v-for="(lvl, index) in savedLevels" :key="index">
-            Level: <router-link :to="lvl.link">{{ lvl.link }}</router-link>
+          <li v-for="(lvl, index) in moduleGetterSavedLevelsList" :key="index">
+            <router-link :to="lvl.link">{{ lvl.id.slice(0, 8) }}</router-link>
+            ({{ printDate(lvl.createdAt) }})
             <a class="remove-btn" @click.prevent="removeLevel(lvl.id, lvl.public)"
               ><app-button type="special"> X </app-button></a
             >
             <a v-if="!lvl.public" class="private-btn" @click.prevent="makePublic(lvl.id)"
-              ><app-button type="special"> Private </app-button></a
+              ><app-button type="special"> Unlisted </app-button></a
             >
             <a v-if="lvl.public" class="public-btn" @click.prevent="makePrivate(lvl.id)"
               ><app-button type="basic"> Public </app-button></a
@@ -22,25 +23,29 @@
       <br />
       <br />
       <div class="public-levels">
-        <h2>All public levels:</h2>
+        <h3>All public levels</h3>
         <ul class="levels-list">
-          <li v-for="(lvl, index) in publicLevels" :key="index">
-            Level: <router-link :to="lvl.link">{{ lvl.link }}</router-link>
+          <li v-for="(lvl, index) in moduleGetterPublicLevels" :key="index">
+            <router-link :to="lvl.link">{{ lvl.id.slice(0, 8) }}</router-link>
+            ({{ printDate(lvl.createdAt) }})
           </li>
         </ul>
       </div>
-    </div>
-    <div slot="right">
-      <a @click.prevent="signOut"><app-button type="special"> Sign Out! </app-button></a>
+      <div class="signOut">
+        <a @click.prevent="signOut">Sign Out</a>
+      </div>
     </div>
   </app-layout>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import $userStore from '@/store/userStore'
+import { namespace } from 'vuex-class'
+// import $userStore from '@/store/userStore'
 import AppLayout from '@/components/AppLayout.vue'
 import AppButton from '@/components/AppButton.vue'
+
+const user = namespace('userModule')
 
 @Component({
   components: {
@@ -49,37 +54,39 @@ import AppButton from '@/components/AppButton.vue'
   },
 })
 export default class SavedLevels extends Vue {
-  get user(): string {
-    return $userStore.getters.userName
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  get savedLevels(): any {
-    return $userStore.getters.savedLevelsList
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  get publicLevels(): any {
-    return $userStore.getters.publicLevels
-  }
+  @user.Action('MAKE_LEVEL_PRIVATE') actionMakeLevelPrivate!: Function
+  @user.Action('MAKE_LEVEL_PUBLIC') actionMakeLevelPublic!: Function
+  @user.Action('SIGN_OUT') actionSignOut!: Function
+  @user.Action('REMOVE_LEVEL') actionRemoveLevel!: Function
+  @user.Getter('userName') moduleGetterUserName!: string
+  @user.Getter('savedLevelsList') moduleGetterSavedLevelsList!: []
+  @user.Getter('publicLevels') moduleGetterPublicLevels!: []
 
   removeLevel(id: string, isPublic: boolean): void {
     if (isPublic) {
-      $userStore.dispatch('MAKE_LEVEL_PRIVATE', id)
+      this.actionMakeLevelPrivate(id)
     }
-    $userStore.dispatch('REMOVE_LEVEL', id)
+    this.actionRemoveLevel(id)
   }
 
   makePublic(id: string): void {
-    $userStore.dispatch('MAKE_LEVEL_PUBLIC', id)
+    this.actionMakeLevelPublic(id)
   }
 
   makePrivate(id: string): void {
-    $userStore.dispatch('MAKE_LEVEL_PRIVATE', id)
+    this.actionMakeLevelPrivate(id)
   }
 
   signOut(): void {
-    $userStore.dispatch('SIGN_OUT', this.user)
+    this.actionSignOut(this.moduleGetterUserName)
+  }
+
+  printDate(timestamp: any): string {
+    if (!timestamp) {
+      return ''
+    }
+    const date = timestamp.toDate()
+    return date.toUTCString()
   }
 }
 </script>
@@ -92,23 +99,17 @@ h1 {
   line-height: 150%;
   text-transform: uppercase;
 }
-p {
-  color: rgba(255, 255, 255, 0.7);
-  // line-height: 150%;
-}
 .levels-list {
   list-style: none;
   li {
     margin: 5px auto;
   }
 }
-.edit-level {
-  cursor: pointer;
-  border: 1px solid #fff;
-  margin: 10px;
-}
 .remove-btn {
   margin-right: 20px;
   margin-left: 20px;
+}
+.signOut {
+  margin: 20px 10px 10px 10px;
 }
 </style>

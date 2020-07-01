@@ -30,10 +30,10 @@ export default class EncyclopediaLinkList extends Vue {
 
 <style lang="scss" scoped>
 .element-list {
-  border-top: 1px solid white;
   overflow: hidden;
   transition: 0.5s;
   user-select: none;
+  line-height: 150%;
   & .not-ready {
     opacity: 0.5;
   }
@@ -50,21 +50,11 @@ export default class EncyclopediaLinkList extends Vue {
       }
     }
   }
-  a {
-    color: #837e9b;
-    text-decoration: none;
-    line-height: 175%;
-    font-size: 90%;
-    // & div {
-    //   margin-left: 10px;
-    // }
-  }
-  a:hover {
-    font-weight: 900;
-  }
   h3 {
+    margin-top: 0;
     @media screen and (max-width: 1000px) {
       &::after {
+        margin-top: 1em;
         display: inline-block;
         position: relative;
         content: '';

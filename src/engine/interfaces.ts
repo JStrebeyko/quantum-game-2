@@ -1,38 +1,4 @@
 /**
- * USER STATE INTERFACE
- */
-export interface IUserState {
-  user: {
-    loggedIn: boolean
-    rememberMe: boolean
-    data: {
-      displayName: string
-      email: string
-    }
-  }
-  progressArr: IProgressObj[]
-  savedLevelsList: ISavedLevel[]
-  publicLevels: IPublicLevel[]
-  error: null
-}
-
-interface IProgressObj {
-  id: number
-  status: 'string'
-  score: number
-}
-
-interface ISavedLevel {
-  id: 'string'
-  link: 'string'
-  public: boolean
-}
-
-interface IPublicLevel {
-  link: 'string'
-}
-
-/**
  * PARTICLE INTERFACE
  * Particle interface in primitives
  */
@@ -85,6 +51,7 @@ export interface ILevel {
   hints: IHint[]
   tools: string[]
   safetyThreshold?: number
+  rockTalkId?: string
 }
 
 /**
@@ -269,6 +236,7 @@ export enum Elem {
   // Polarization
   Polarizer = 'Polarizer',
   QuarterWavePlate = 'QuarterWavePlate',
+  HalfWavePlate = 'HalfWavePlate',
   SugarSolution = 'SugarSolution',
   FaradayRotator = 'FaradayRotator',
   // Phase
@@ -302,6 +270,7 @@ export const enum ElemLower {
   // Polarization
   Polarizer = 'polarizer',
   QuarterWavePlate = 'quarter-wave-plate',
+  HalfWavePlate = 'half-wave-plate',
   SugarSolution = 'sugar-solution',
   FaradayRotator = 'faraday-rotator',
   // Phase
@@ -343,7 +312,13 @@ export const ElemGroups: { [symbol: string]: Elem[] } = {
     Elem.DetectorFour,
     Elem.Wall,
   ],
-  Polarization: [Elem.Polarizer, Elem.QuarterWavePlate, Elem.SugarSolution, Elem.FaradayRotator],
+  Polarization: [
+    Elem.Polarizer,
+    Elem.QuarterWavePlate,
+    Elem.HalfWavePlate,
+    Elem.SugarSolution,
+    Elem.FaradayRotator,
+  ],
   Phase: [Elem.Glass, Elem.VacuumJar],
 }
 
